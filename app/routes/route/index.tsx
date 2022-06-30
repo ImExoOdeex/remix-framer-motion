@@ -6,8 +6,8 @@ export const loader = () => {
 };
 
 function Index() {
-    const data = useLoaderData() ?? {};
-    /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    const data = useLoaderData();
+    /*
     
     there's actally one not good fix for this
     we can use this:
