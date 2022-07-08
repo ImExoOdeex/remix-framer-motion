@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export function meta() {
@@ -13,6 +13,7 @@ export default function Index() {
 
   return (
     <motion.div
+      key={useLocation().key}
       style={{ textAlign: "center", padding: 20 }}
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
@@ -22,9 +23,10 @@ export default function Index() {
       <div style={{ width: '200px', height: '100px', backgroundColor: "#d35b8d", margin: 'auto' }} />
       <h2>Welcome to Remix with framer motion!</h2>
       <p>
-        While exiting second route, error will be displayed. Error displays only when full page transitions are working!
+        While exiting <code>loader</code>  route, error will be displayed. Error displays only when full page transitions are working!
       </p>
-      <button onClick={() => navigate("/route")}>Go to second route</button>
+      <button onClick={() => navigate("/loader")}>Go to loader route</button>
+
     </motion.div>
   );
 }

@@ -3,7 +3,6 @@ import {
   Links,
   LiveReload,
   Meta,
-  Outlet,
   Scripts,
   ScrollRestoration,
   useLocation,
@@ -29,8 +28,7 @@ export default function App() {
       <body>
 
         <AnimatePresence exitBeforeEnter>
-          <motion.main key={location.key}>
-            {/* <Outlet /> */}
+          <motion.main>
             {outlet}
           </motion.main>
         </AnimatePresence>
@@ -39,6 +37,6 @@ export default function App() {
         <Scripts />
         <LiveReload />
       </body>
-    </html>
+    </html >
   );
 }

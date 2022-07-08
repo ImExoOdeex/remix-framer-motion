@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData, useLocation } from "@remix-run/react";
 import { motion } from "framer-motion";
 
 export const loader = () => {
@@ -6,8 +6,8 @@ export const loader = () => {
 };
 
 function Index() {
-    const data = useLoaderData() ?? {};
-    /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    const data = useLoaderData();
+    /*
     
     there's actally one not good fix for this
     we can use this:
@@ -18,6 +18,7 @@ function Index() {
 
     return (
         <motion.div
+            key={useLocation().key}
             style={{ textAlign: "center", padding: 20 }}
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
