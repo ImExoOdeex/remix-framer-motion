@@ -13,6 +13,7 @@ function Index() {
     we can use this:
     const data = useLoaderData() ?? {};
     BUT now, when we exit page, and animation plays, no loader data will be displayed, cuz its empty object 
+    edit: I found it does not work always, idk what it depends on
 
     */
 
