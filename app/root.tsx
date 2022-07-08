@@ -28,9 +28,7 @@ export default function App() {
       <body>
 
         <AnimatePresence exitBeforeEnter>
-          <motion.main>
-            {outlet}
-          </motion.main>
+          {outlet}
         </AnimatePresence>
 
         <ScrollRestoration />
