@@ -6,16 +6,15 @@ export const loader = () => {
 };
 
 function Index() {
-    const data = useLoaderData();
-    /*
-    
-    there's actally one not good fix for this
-    we can use this:
-    const data = useLoaderData() ?? {};
-    BUT now, when we exit page, and animation plays, no loader data will be displayed, cuz its empty object 
-    edit: I found it does not work always, idk what it depends on
 
-    */
+    //next line for fix
+    const lastData = useRef({})
+
+    const data = useLoaderData() || lastData.current;
+    
+    useEffect(() => {
+        if (data) lastData.current = data
+}, [data])
 
     return (
         <motion.div
