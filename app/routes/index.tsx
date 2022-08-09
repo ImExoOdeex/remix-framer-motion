@@ -13,7 +13,7 @@ export default function Index() {
 
   return (
     <motion.div
-      key={useLocation().key}
+
       style={{ textAlign: "center", padding: 20 }}
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}

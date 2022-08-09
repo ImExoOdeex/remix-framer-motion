@@ -26,11 +26,11 @@ export default function App() {
         <Links />
       </head>
       <body>
-
         <AnimatePresence exitBeforeEnter>
-          {outlet}
+          <motion.main key={location.pathname}>
+            {outlet}
+          </motion.main>
         </AnimatePresence>
-
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

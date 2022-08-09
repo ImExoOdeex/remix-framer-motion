@@ -1,5 +1,6 @@
 import { Link, useLoaderData, useLocation } from "@remix-run/react";
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export const loader = () => {
     return { message: "While exiting this page error will be displayed!" };
@@ -11,14 +12,14 @@ function Index() {
     const lastData = useRef({})
 
     const data = useLoaderData() || lastData.current;
-    
+
     useEffect(() => {
         if (data) lastData.current = data
-}, [data])
+    }, [data])
 
     return (
         <motion.div
-            key={useLocation().key}
+
             style={{ textAlign: "center", padding: 20 }}
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
